@@ -6,7 +6,7 @@ interface ModalProps {
     className?:string
 }
 
-const Modal = ({races, className }) => {
+const Modal = ({races, className }:ModalProps) => {
     new Audio("/assets/sound/cupOK.mp3").play();
     return(
         <div id="modal" className={`isolate aspect-video rounded-xl w-1/2 bg-white/90 shadow-lg ring-1 ring-black/5 ${className}`}>
