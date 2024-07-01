@@ -1,0 +1,56 @@
+body, html {
+  height: 100%;
+}
+
+
+#page{
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/462/71/622/4k-poster-mario-kart-8-deluxe-wallpaper-preview.jpg");
+  padding: 5px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+* {
+  font-family: 'New Super Mario Font U', sans-serif;
+  cursor: url("../../public/assets/cursor/cursor.cur"), auto;
+}
+
+.name {
+  font-size:1.5rem;
+  color:white;
+  -webkit-text-stroke: 2px black;
+}
+
+#card {
+  backdrop-filter: blur(10px);
+  padding:5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: transform .2s;
+  z-index:0;
+}
+
+#card:hover{
+  transform: scale(1.5);
+  z-index: 1;
+}
+
+#cardBody{
+  padding: 2px;
+}
+
+.title {
+  font-size:2rem;
+  color:white;
+  -webkit-text-stroke: 2px black;
+}
+
+#modal {
+  position: absolute;
+  z-index: 2;
+  padding: 2rem;
+}
+
+.finalRace {
+  width: 200%;
+}
