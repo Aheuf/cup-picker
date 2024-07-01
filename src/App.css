@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "New Super Mario Font U";
+  src: url("../public/assets/font/NewSuperMarioFontU.ttf");
+}
+
 body, html {
   height: 100%;
 }
@@ -12,7 +17,7 @@ body, html {
 }
 
 * {
-  font-family: 'New Super Mario Font U', sans-serif;
+  font-family: 'New Super Mario Font U';
   cursor: url("../public/assets/cursor/cursor.cur"), auto;
 }
 
