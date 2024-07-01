@@ -8,7 +8,7 @@ interface CardProps {
     className?:string
 }
 
-const Card = ({cup, onClickRace, className}:CardProps) => {
+export default function Card ({cup, onClickRace, className}:CardProps) {
     const [disabled, setDisabled] = useState<boolean>(false);
     const cupImgSize = 50;
     const enterCard = new Audio("/assets/sound/switchMarioKart.mp3")
@@ -38,5 +38,3 @@ const Card = ({cup, onClickRace, className}:CardProps) => {
         </div>
     )
 }
-
-export default Card;

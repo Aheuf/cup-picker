@@ -1,4 +1,4 @@
-import { Cup } from "../models/cupModel";
+import { Cup } from "../models/cupModel.ts";
 import {
     AmsterdamDrift, AthensDash, BangkokRush, BerlinByways,
     BooLake, BowserCastle3, ChocoMontain, CoconutMall, DKMountain,
@@ -10,7 +10,7 @@ import {
     SingaporeSpeedway, SkyGarden, SkyHighSundae, SnowLand, SqueakyCleanSprint,
     SunsetWilds, SydneySprint, ToadCircuit, TokyoBlur, VancouverVelocity,
     WaluigiPinball, WaluigiStadium, WiiRainbowRoad, YoshiIsland
-  } from "./dlcRaces";
+  } from "./dlcRaces.ts";
   import {
     GCNDryDryDesert,SNESDonutPlains3,N64RoyalRaceway,
     DSDKJungle,DSNeoBowserCity,GBARebbonRoad,superBellSubway,bigBlue,
@@ -24,7 +24,7 @@ import {
     cloudtopCruise,boneDryDunes,bowserCastle,rainbowRoad,
     sunshineAirport,dolphinShoals,electroDome,mount,
     wiiWarioGoldMine,SNESRainbowRoad,iceIceOutpost,HyruleCircuit
-  } from "./nonDlcRaces";
+  } from "./nonDlcRaces.ts";
   
   export const cups: Cup[] = [
     {

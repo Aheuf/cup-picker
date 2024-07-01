@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from "react";
-import Card from "../components/Card";
-import { cups } from "../../data/cups";
-import Modal from "../components/Modal";
-import { Race } from "../../models/raceModel";
+import Card from "../components/Card/index.tsx";
+import { cups } from "../../data/cups.ts";
+import Modal from "../components/Modal/index.tsx";
+import { Race } from "../../models/raceModel.ts";
 
 export default function Home() {
   const [banned, setBanned] = useState<Race[]>([]);
@@ -13,7 +13,6 @@ export default function Home() {
 
   const pickAudio = new Audio("/assets/sound/pickMarioKart.mp3");
   const banAudio = new Audio("/assets/sound/banMarioKart.mp3");
-  new Audio("/assets/sound/MainMenu.mp3").play();
 
   const PlayerPick = useCallback((race) => {
     if(banned.length === 8 && !picked.includes(race) && picked.length < 4 && !banned.includes(race)){
@@ -29,14 +28,12 @@ export default function Home() {
 
   return (
     <div id="page" className="grid grid-cols-12 justify-items-center">
-      {picked.length === 4 && <Modal races={picked} className=""/>}
-      
-      {/* <audio src="/assets/sound/MainMenu.mp3"
+      {picked.length === 4 && <Modal races={picked}/>}
+      <audio src="/assets/sound/MainMenu.mp3"
         loop
         controls
         style={{position: "absolute", top: "0px", left: "0px"}}
-      /> */}
-
+      />
       {/* picked and banned */}
       <div className="col-span-12 grid grid-cols-2">
         <div className="isolate aspect-video rounded-xl bg-white/50 shadow-lg ring-1 ring-black/5 p-6 my-6 ml-6 h-64 w-11/12 overflow-auto">
@@ -61,5 +58,5 @@ export default function Home() {
         {cupsDLC.sort((a,b) => a.order - b.order).map(cup => <Card key={cup.title} cup={cup} onClickRace={PlayerPick} />)}
       </div>
     </div>
-);
+  );
 }

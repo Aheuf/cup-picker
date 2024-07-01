@@ -13,7 +13,7 @@ body, html {
 
 * {
   font-family: 'New Super Mario Font U', sans-serif;
-  cursor: url("../../public/assets/cursor/cursor.cur"), auto;
+  cursor: url("../public/assets/cursor/cursor.cur"), auto;
 }
 
 .name {
