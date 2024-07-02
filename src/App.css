@@ -19,10 +19,6 @@ body, html {
 * {
   font-family: 'New Super Mario Font U';
   cursor: url("../public/assets/cursor/cursor.cur"), auto;
-}
-
-.name {
-  font-size:1.5rem;
   color:white;
   -webkit-text-stroke: 2px black;
 }
@@ -42,20 +38,4 @@ body, html {
 
 #cardBody{
   padding: 2px;
-}
-
-.title {
-  font-size:2rem;
-  color:white;
-  -webkit-text-stroke: 2px black;
-}
-
-#modal {
-  position: absolute;
-  z-index: 2;
-  padding: 2rem;
-}
-
-.finalRace {
-  width: 200%;
 }

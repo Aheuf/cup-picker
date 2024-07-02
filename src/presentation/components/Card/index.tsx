@@ -19,7 +19,7 @@ export default function Card ({cup, onClickRace, className}:CardProps) {
             onMouseEnter={() => enterCard.play()}>
             <div id="cardHeader" className="grid grid-cols-4 gap-2">
                 <img src={`/${cup.img}`} alt={cup.title} width={cupImgSize}  height={cupImgSize} onClick={() => {setDisabled(!disabled)}}/>
-                <h2 className="title">{cup.title}</h2>
+                <h2 className="text-3xl">{cup.title}</h2>
             </div>
             <div id="cardBody" className="grid grid-cols-2 gap-2 justify-items-center">
                 {cup.races?.map(race =>

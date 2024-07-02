@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import Card from "../components/Card/index.tsx";
 import { cups } from "../../data/cups.ts";
 import Modal from "../components/Modal/index.tsx";
@@ -13,8 +13,12 @@ export default function Home() {
 
   const pickAudio = new Audio("/assets/sound/pickMarioKart.mp3");
   const banAudio = new Audio("/assets/sound/banMarioKart.mp3");
+  // const menuMusic = new Audio("/assets/sound/MainMenu.mp3");
+  // menuMusic.volume = 0.05
+  // menuMusic.loop = true;
+  // menuMusic.play();
 
-  const PlayerPick = useCallback((race) => {
+  const PlayerPick = (race:Race) => {
     if(banned.length === 8 && !picked.includes(race) && picked.length < 4 && !banned.includes(race)){
         pickAudio.play();
         race.picked = true;
@@ -24,30 +28,26 @@ export default function Home() {
         race.banned = true;
         setBanned(banned => [...banned, race])
     }
-  },[banned,picked])
+  }
+
 
   return (
     <div id="page" className="grid grid-cols-12 justify-items-center">
-      {picked.length === 4 && <Modal races={picked}/>}
-      <audio src="/assets/sound/MainMenu.mp3"
-        loop
-        controls
-        style={{position: "absolute", top: "0px", left: "0px"}}
-      />
+      {picked.length === 4 && <Modal races={picked} sound="/assets/sound/cupOK.mp3"/>}
       {/* picked and banned */}
       <div className="col-span-12 grid grid-cols-2">
         <div className="isolate aspect-video rounded-xl bg-white/50 shadow-lg ring-1 ring-black/5 p-6 my-6 ml-6 h-64 w-11/12 overflow-auto">
-          <h1 className="title">banned</h1>
+          <h1 className="text-3xl">banned</h1>
           <hr/>
           <ul>
-            {banned.map(race => <li className="name" key={race.title}>{race.title}</li>)}
+            {banned.map(race => <li className="text-2xl" key={race.title}>{race.title}</li>)}
           </ul>
         </div>
         <div className="isolate aspect-video rounded-xl bg-white/50 shadow-lg ring-1 ring-black/5 p-6 my-6 mr-6 h-64 w-11/12">
-          <h1 className="title">picked</h1>
+          <h1 className="text-3xl">picked</h1>
           <hr/>
           <ul>
-            {picked.map(race => <li className="name" key={race.title}>{race.title}</li>)}
+            {picked.map(race => <li className="text-2xl" key={race.title}>{race.title}</li>)}
           </ul>
         </div>
       </div>
